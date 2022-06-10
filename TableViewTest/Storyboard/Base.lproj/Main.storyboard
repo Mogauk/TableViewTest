@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Elm-Xw-n6D">
+                                <rect key="frame" x="20" y="64" width="374" height="199"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g2H-mi-TbU">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="147"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персональные данные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-ps-HWI">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeI-Es-Rfa" customClass="RoundedTextField" customModule="TableViewTest" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="32" width="374" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="it7-4n-znc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAi-y1-3G9" customClass="RoundedTextField" customModule="TableViewTest" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="97" width="374" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CGf-2b-bzv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-j1-xDP">
+                                        <rect key="frame" x="0.0" y="167" width="374" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дети (макс. 5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-5S-169">
+                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="32"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeY-eu-UOB">
+                                                <rect key="frame" x="111.5" y="0.0" width="262.5" height="32"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Добавить ребенка" imagePadding="5">
+                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="small"/>
+                                                    <backgroundConfiguration key="background" cornerRadius="15">
+                                                        <color key="strokeColor" name="AccentColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addChildAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tX6-5N-yYH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fQu-Nj-HxK">
+                                <rect key="frame" x="0.0" y="263" width="414" height="633"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="geV-qd-34p">
+                                    <rect key="frame" x="0.0" y="204" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBU-Hs-QdL">
+                                            <rect key="frame" x="20" y="20" width="374" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Очистить">
+                                                <backgroundConfiguration key="background" cornerRadius="15">
+                                                    <color key="strokeColor" systemColor="systemRedColor"/>
+                                                </backgroundConfiguration>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                                <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="eraseAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZSR-80-J9Z"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="FBU-Hs-QdL" secondAttribute="trailing" constant="20" id="D4a-I2-EGA"/>
+                                        <constraint firstAttribute="bottom" secondItem="FBU-Hs-QdL" secondAttribute="bottom" constant="20" id="OAd-2G-QnB"/>
+                                        <constraint firstItem="FBU-Hs-QdL" firstAttribute="top" secondItem="geV-qd-34p" secondAttribute="top" constant="20" id="Pxz-8X-JOT"/>
+                                        <constraint firstItem="FBU-Hs-QdL" firstAttribute="leading" secondItem="geV-qd-34p" secondAttribute="leading" constant="20" id="vm1-W4-CmG"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChildrenTableViewCell" id="Lce-6E-pYu" customClass="ChildrenTableViewCell" customModule="TableViewTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="137"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lce-6E-pYu" id="1o2-NI-TLG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="79d-BM-ujt">
+                                                    <rect key="frame" x="20" y="11" width="374" height="115"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j5v-lf-lwe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="115"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-n6-JGx" customClass="RoundedTextField" customModule="TableViewTest" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="4DG-ov-XUq"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-9J-0a2" customClass="RoundedTextField" customModule="TableViewTest" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="65" width="187" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="spD-3u-xNT"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzt-j0-u6L">
+                                                            <rect key="frame" x="187" y="0.0" width="187" height="35.5"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="Удалить">
+                                                                <backgroundConfiguration key="background"/>
+                                                                <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="removeChild:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xz-bD-9VO"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="79d-BM-ujt" secondAttribute="trailing" id="3A4-hT-gKS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="79d-BM-ujt" secondAttribute="bottom" id="eqR-YT-FDg"/>
+                                                <constraint firstItem="79d-BM-ujt" firstAttribute="leading" secondItem="1o2-NI-TLG" secondAttribute="leadingMargin" id="rM4-rA-ekB"/>
+                                                <constraint firstItem="79d-BM-ujt" firstAttribute="top" secondItem="1o2-NI-TLG" secondAttribute="topMargin" id="sNT-81-WkW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="childAgeField" destination="Xfn-9J-0a2" id="5xf-4I-B5P"/>
+                                            <outlet property="childNameField" destination="w4x-n6-JGx" id="iYi-d9-G0o"/>
+                                            <outlet property="deleteChildButton" destination="bzt-j0-u6L" id="F6S-JE-JAy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Elm-Xw-n6D" secondAttribute="trailing" constant="20" id="CIZ-Qd-Q1U"/>
+                            <constraint firstItem="Elm-Xw-n6D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DmR-Aj-ye7"/>
+                            <constraint firstItem="fQu-Nj-HxK" firstAttribute="top" secondItem="Elm-Xw-n6D" secondAttribute="bottom" id="I1D-fu-ucN"/>
+                            <constraint firstItem="fQu-Nj-HxK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cnN-mo-rKA"/>
+                            <constraint firstAttribute="bottom" secondItem="fQu-Nj-HxK" secondAttribute="bottom" id="fYM-mN-wf4"/>
+                            <constraint firstItem="Elm-Xw-n6D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jG6-fF-egf"/>
+                            <constraint firstItem="fQu-Nj-HxK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nAb-bf-GmA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addChildButton" destination="EeY-eu-UOB" id="Wkl-Ae-mTU"/>
+                        <outlet property="ageField" destination="QAi-y1-3G9" id="2Cp-Ds-Rtc"/>
+                        <outlet property="childCountLabel" destination="cdh-5S-169" id="j3n-9B-ntZ"/>
+                        <outlet property="clearButton" destination="FBU-Hs-QdL" id="PDO-mR-gkY"/>
+                        <outlet property="nameField" destination="qeI-Es-Rfa" id="3Vw-Zt-DVD"/>
+                        <outlet property="personalDataLabel" destination="aNO-ps-HWI" id="VGW-bG-64b"/>
+                        <outlet property="tableView" destination="fQu-Nj-HxK" id="1kD-2l-r3I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
