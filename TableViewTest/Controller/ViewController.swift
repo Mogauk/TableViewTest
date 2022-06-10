@@ -35,7 +35,11 @@ class ViewController: UIViewController {
         }
     }
     
-    var userData: UserData = UserData(name: "", age: "", child: [])
+    var userData: UserData = UserData(name: "", age: "", child: []) {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -77,16 +81,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addChildAction(_ sender: UIButton) {
-        print("tapped")
         
         let child: Child = Child(nameChild: "", ageChild: "")
         self.userData.child.insert(child, at: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
-        tableView.endUpdates()
+        
+        print(userData.child.count)
         
         if userData.child.count >= 5 {
             addChildButton.isHidden = true
+        
+
         }
         
     }
@@ -112,12 +116,14 @@ class ViewController: UIViewController {
             self.ageField.text = ""
             self.nameField.becomeFirstResponder()
             
-            self.tableView.dataSource = nil
-            self.tableView.reloadData()
+            
+            self.userData.child.removeAll()
+            
+            
             self.clearButton.isHidden = true
             self.addChildButton.isHidden = false
             
-            print("Check")
+            print(self.userData.child.count)
             
         })
         optionMenu.addAction(eraseAction)
