@@ -35,11 +35,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var userData: UserData = UserData(name: "", age: "", child: []) {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var userData: UserData = UserData(name: "", age: "", child: [])
     
     
     override func viewDidLoad() {
@@ -62,8 +58,12 @@ class ViewController: UIViewController {
         let point = sender.convert(CGPoint.zero, to: tableView)
         guard let indexPath = tableView.indexPathForRow(at: point)
         else {return}
-        
+    
         userData.child.remove(at: indexPath.row)
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .right)
+        tableView.endUpdates()
+        
         
         print(userData.child.count)
         
@@ -78,15 +78,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addChildAction(_ sender: UIButton) {
+        print(userData.child.count)
         
         let child: Child = Child(nameChild: "", ageChild: "")
-        self.userData.child.insert(child, at: 0)
         
-        print(userData.child.count)
+        userData.child.insert(child, at: userData.child.count)
+        
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
+        tableView.endUpdates()
         
         if userData.child.count >= 5 {
             addChildButton.isHidden = true
-        
+            
         }
         
     }
@@ -111,7 +115,10 @@ class ViewController: UIViewController {
             self.ageField.text = ""
             self.nameField.becomeFirstResponder()
             
+            
             self.userData.child.removeAll()
+            self.tableView.reloadData()
+            
             
             self.clearButton.isHidden = true
             self.addChildButton.isHidden = false
