@@ -65,9 +65,6 @@ class ViewController: UIViewController {
         
         userData.child.remove(at: indexPath.row)
         
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .right)
-        tableView.endUpdates()
         print(userData.child.count)
         
         if userData.child.count < 5 {
@@ -90,11 +87,9 @@ class ViewController: UIViewController {
         if userData.child.count >= 5 {
             addChildButton.isHidden = true
         
-
         }
         
     }
-    
     
     @IBAction func eraseAll(_ sender: UIButton) {
         print("erase")
@@ -116,9 +111,7 @@ class ViewController: UIViewController {
             self.ageField.text = ""
             self.nameField.becomeFirstResponder()
             
-            
             self.userData.child.removeAll()
-            
             
             self.clearButton.isHidden = true
             self.addChildButton.isHidden = false
